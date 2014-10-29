@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7DDC0F071A01237500698868"
+               BlueprintIdentifier = "7D0CA9BF1A01701E00D243C5"
                BuildableName = "Funky Unit Converter.app"
                BlueprintName = "Funky Unit Converter"
                ReferencedContainer = "container:Funky Unit Converter.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7DDC0F201A01237500698868"
+               BlueprintIdentifier = "7D0CA9D81A01701E00D243C5"
                BuildableName = "Funky Unit ConverterTests.xctest"
                BlueprintName = "Funky Unit ConverterTests"
                ReferencedContainer = "container:Funky Unit Converter.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7DDC0F201A01237500698868"
+               BlueprintIdentifier = "7D0CA9D81A01701E00D243C5"
                BuildableName = "Funky Unit ConverterTests.xctest"
                BlueprintName = "Funky Unit ConverterTests"
                ReferencedContainer = "container:Funky Unit Converter.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7DDC0F071A01237500698868"
+            BlueprintIdentifier = "7D0CA9BF1A01701E00D243C5"
             BuildableName = "Funky Unit Converter.app"
             BlueprintName = "Funky Unit Converter"
             ReferencedContainer = "container:Funky Unit Converter.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7DDC0F071A01237500698868"
+            BlueprintIdentifier = "7D0CA9BF1A01701E00D243C5"
             BuildableName = "Funky Unit Converter.app"
             BlueprintName = "Funky Unit Converter"
             ReferencedContainer = "container:Funky Unit Converter.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7DDC0F071A01237500698868"
+            BlueprintIdentifier = "7D0CA9BF1A01701E00D243C5"
             BuildableName = "Funky Unit Converter.app"
             BlueprintName = "Funky Unit Converter"
             ReferencedContainer = "container:Funky Unit Converter.xcodeproj">
