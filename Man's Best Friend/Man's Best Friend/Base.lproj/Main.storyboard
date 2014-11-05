@@ -19,7 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HN7-U5-H9a">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-52" y="-13" width="460" height="593"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="321" height="478"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmZ-S3-6mh">
@@ -28,7 +28,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="437" width="184" height="21"/>
+                                    <rect key="frame" x="16" y="408" width="184" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONq-jL-XSp">
@@ -37,9 +37,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="437" width="176" height="21"/>
+                                    <rect key="frame" x="112" y="408" width="176" height="21"/>
                                 </variation>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-Ui-Eal">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oJr-xW-6hU"/>
+                                    <barButtonItem title="New Dog" id="0ou-vX-vxM">
+                                        <connections>
+                                            <action selector="NewDogButtonPressed:" destination="vXZ-lx-hvc" id="YdS-Ou-9Nr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="434" width="321" height="44"/>
+                                </variation>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -47,6 +61,7 @@
                                 <exclude reference="HN7-U5-H9a"/>
                                 <exclude reference="QmZ-S3-6mh"/>
                                 <exclude reference="ONq-jL-XSp"/>
+                                <exclude reference="UNc-Ui-Eal"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -54,6 +69,7 @@
                                 <include reference="HN7-U5-H9a"/>
                                 <include reference="QmZ-S3-6mh"/>
                                 <include reference="ONq-jL-XSp"/>
+                                <include reference="UNc-Ui-Eal"/>
                             </mask>
                         </variation>
                     </view>
@@ -65,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.5" y="296"/>
+            <point key="canvasLocation" x="42" y="303"/>
         </scene>
     </scenes>
 </document>

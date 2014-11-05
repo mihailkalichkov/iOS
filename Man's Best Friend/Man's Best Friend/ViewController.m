@@ -25,11 +25,44 @@
     self.myImage.image = myDog.image;
     self.nameLabel.text = myDog.name;
     self.breedLabel.text = myDog.breed;
+    
+    MBFDog *secondDog = [[MBFDog alloc] init];
+    secondDog.breed = @"Yorkshire terrier";
+    secondDog.name = @"Leo";
+    secondDog.image = [UIImage imageNamed:@"yorkshire-terrier.jpeg"];
+    
+    MBFDog *thirdDog = [[MBFDog alloc] init];
+    thirdDog.breed = @"Husky";
+    thirdDog.name = @"Fluffy";
+    thirdDog.image = [UIImage imageNamed:@"husky.jpg"];
+    
+    MBFDog *fourthDog = [[MBFDog alloc] init];
+    fourthDog.breed = @"German shepherd";
+    fourthDog.name = @"Sarrah";
+    fourthDog.image = [UIImage imageNamed:@"german-shepherd.jpg"];
+    
+    self.myDogs = [[NSMutableArray alloc] init];
+    [self.myDogs addObject:myDog];
+    [self.myDogs addObject:secondDog];
+    [self.myDogs addObject:thirdDog];
+    [self.myDogs addObject:fourthDog];
+    NSLog(@"%@", self.myDogs);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)NewDogButtonPressed:(UIBarButtonItem *)sender {
+    int numberOfDogs = [self.myDogs count];
+    int randomIndex = arc4random() % numberOfDogs;
+    
+    MBFDog *randomDog = [self.myDogs objectAtIndex:randomIndex];
+    self.myImage.image = randomDog.image;
+    self.breedLabel.text = randomDog.breed;
+    self.nameLabel.text = randomDog.name;
+    sender.title = @"And Another";
 }
 
 @end

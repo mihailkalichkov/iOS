@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D6F59A61A0A533C00AB626C /* yorkshire-terrier.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7D6F59A31A0A533C00AB626C /* yorkshire-terrier.jpeg */; };
+		7D6F59A71A0A533C00AB626C /* german-shepherd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D6F59A41A0A533C00AB626C /* german-shepherd.jpg */; };
+		7D6F59A81A0A533C00AB626C /* husky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D6F59A51A0A533C00AB626C /* husky.jpg */; };
 		7DFB4C101A095234005C4627 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB4C0F1A095234005C4627 /* main.m */; };
 		7DFB4C131A095234005C4627 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB4C121A095234005C4627 /* AppDelegate.m */; };
 		7DFB4C161A095234005C4627 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB4C151A095234005C4627 /* ViewController.m */; };
@@ -29,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D6F59A31A0A533C00AB626C /* yorkshire-terrier.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "yorkshire-terrier.jpeg"; sourceTree = "<group>"; };
+		7D6F59A41A0A533C00AB626C /* german-shepherd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "german-shepherd.jpg"; sourceTree = "<group>"; };
+		7D6F59A51A0A533C00AB626C /* husky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = husky.jpg; sourceTree = "<group>"; };
 		7DFB4C0A1A095234005C4627 /* Man's Best Friend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Man's Best Friend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFB4C0E1A095234005C4627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DFB4C0F1A095234005C4627 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				7DFB4C361A095815005C4627 /* Labrador.jpg */,
+				7D6F59A31A0A533C00AB626C /* yorkshire-terrier.jpeg */,
+				7D6F59A41A0A533C00AB626C /* german-shepherd.jpg */,
+				7D6F59A51A0A533C00AB626C /* husky.jpg */,
 				7DFB4C0E1A095234005C4627 /* Info.plist */,
 				7DFB4C0F1A095234005C4627 /* main.m */,
 			);
@@ -208,6 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DFB4C191A095234005C4627 /* Main.storyboard in Resources */,
+				7D6F59A61A0A533C00AB626C /* yorkshire-terrier.jpeg in Resources */,
+				7D6F59A71A0A533C00AB626C /* german-shepherd.jpg in Resources */,
+				7D6F59A81A0A533C00AB626C /* husky.jpg in Resources */,
 				7DFB4C1E1A095234005C4627 /* LaunchScreen.xib in Resources */,
 				7DFB4C371A095815005C4627 /* Labrador.jpg in Resources */,
 				7DFB4C1B1A095234005C4627 /* Images.xcassets in Resources */,
@@ -422,6 +434,7 @@
 				7DFB4C2F1A095234005C4627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DFB4C301A095234005C4627 /* Build configuration list for PBXNativeTarget "Man's Best FriendTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +443,7 @@
 				7DFB4C321A095234005C4627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
