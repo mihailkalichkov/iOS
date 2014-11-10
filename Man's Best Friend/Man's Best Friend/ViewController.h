@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *breedLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *myImage;
 @property (strong, nonatomic) NSMutableArray *myDogs;
+@property (nonatomic) int currentIndex;
 
 - (IBAction)NewDogButtonPressed:(UIBarButtonItem *)sender;
 

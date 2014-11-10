@@ -25,6 +25,7 @@
     self.myImage.image = myDog.image;
     self.nameLabel.text = myDog.name;
     self.breedLabel.text = myDog.breed;
+    self.currentIndex = 0;
     
     MBFDog *secondDog = [[MBFDog alloc] init];
     secondDog.breed = @"Yorkshire terrier";
@@ -57,6 +58,15 @@
 - (IBAction)NewDogButtonPressed:(UIBarButtonItem *)sender {
     int numberOfDogs = [self.myDogs count];
     int randomIndex = arc4random() % numberOfDogs;
+    
+    if (self.currentIndex == randomIndex && self.currentIndex == 0) {
+        randomIndex++;
+    }
+    else if (self.currentIndex == randomIndex){
+        randomIndex--;
+    }
+    
+    self.currentIndex = randomIndex;
     
     MBFDog *randomDog = [self.myDogs objectAtIndex:randomIndex];
     self.myImage.image = randomDog.image;
