@@ -69,9 +69,19 @@
     self.currentIndex = randomIndex;
     
     MBFDog *randomDog = [self.myDogs objectAtIndex:randomIndex];
-    self.myImage.image = randomDog.image;
-    self.breedLabel.text = randomDog.breed;
-    self.nameLabel.text = randomDog.name;
+    
+//    self.myImage.image = randomDog.image;
+//    self.breedLabel.text = randomDog.breed;
+//    self.nameLabel.text = randomDog.name;
+    
+    [UIView transitionWithView:self.view duration:1.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+        self.myImage.image = randomDog.image;
+        self.breedLabel.text = randomDog.breed;
+        self.nameLabel.text = randomDog.name;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
     sender.title = @"And Another";
 }
 
