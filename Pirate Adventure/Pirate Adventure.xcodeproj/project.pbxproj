@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D8ED3051A1634D500000C91 /* MKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8ED3041A1634D500000C91 /* MKTile.m */; };
+		7D8ED3081A16391D00000C91 /* MKFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8ED3071A16391D00000C91 /* MKFactory.m */; };
+		7D9ECDAB1A137E9000F55EF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9ECDAA1A137E9000F55EF4 /* main.m */; };
+		7D9ECDAE1A137E9000F55EF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9ECDAD1A137E9000F55EF4 /* AppDelegate.m */; };
+		7D9ECDB11A137E9000F55EF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9ECDB01A137E9000F55EF4 /* ViewController.m */; };
+		7D9ECDB41A137E9000F55EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D9ECDB21A137E9000F55EF4 /* Main.storyboard */; };
+		7D9ECDB61A137E9000F55EF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9ECDB51A137E9000F55EF4 /* Images.xcassets */; };
+		7D9ECDB91A137E9000F55EF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D9ECDB71A137E9000F55EF4 /* LaunchScreen.xib */; };
+		7D9ECDC51A137E9000F55EF4 /* Pirate_AdventureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9ECDC41A137E9000F55EF4 /* Pirate_AdventureTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D9ECDBF1A137E9000F55EF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D9ECD9D1A137E9000F55EF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D9ECDA41A137E9000F55EF4;
+			remoteInfo = "Pirate Adventure";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D8ED3031A1634D500000C91 /* MKTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKTile.h; sourceTree = "<group>"; };
+		7D8ED3041A1634D500000C91 /* MKTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTile.m; sourceTree = "<group>"; };
+		7D8ED3061A16391D00000C91 /* MKFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKFactory.h; sourceTree = "<group>"; };
+		7D8ED3071A16391D00000C91 /* MKFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKFactory.m; sourceTree = "<group>"; };
+		7D9ECDA51A137E9000F55EF4 /* Pirate Adventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pirate Adventure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9ECDA91A137E9000F55EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9ECDAA1A137E9000F55EF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D9ECDAC1A137E9000F55EF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7D9ECDAD1A137E9000F55EF4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7D9ECDAF1A137E9000F55EF4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7D9ECDB01A137E9000F55EF4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7D9ECDB31A137E9000F55EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D9ECDB51A137E9000F55EF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7D9ECDB81A137E9000F55EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7D9ECDBE1A137E9000F55EF4 /* Pirate AdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pirate AdventureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D9ECDC31A137E9000F55EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D9ECDC41A137E9000F55EF4 /* Pirate_AdventureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pirate_AdventureTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D9ECDA21A137E9000F55EF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D9ECDBB1A137E9000F55EF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D8ED3021A16346700000C91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D8ED3091A16393300000C91 /* Factory */,
+				7D8ED3031A1634D500000C91 /* MKTile.h */,
+				7D8ED3041A1634D500000C91 /* MKTile.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7D8ED3091A16393300000C91 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				7D8ED3061A16391D00000C91 /* MKFactory.h */,
+				7D8ED3071A16391D00000C91 /* MKFactory.m */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		7D9ECD9C1A137E9000F55EF4 = {
+			isa = PBXGroup;
+			children = (
+				7D9ECDA71A137E9000F55EF4 /* Pirate Adventure */,
+				7D9ECDC11A137E9000F55EF4 /* Pirate AdventureTests */,
+				7D9ECDA61A137E9000F55EF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D9ECDA61A137E9000F55EF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D9ECDA51A137E9000F55EF4 /* Pirate Adventure.app */,
+				7D9ECDBE1A137E9000F55EF4 /* Pirate AdventureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D9ECDA71A137E9000F55EF4 /* Pirate Adventure */ = {
+			isa = PBXGroup;
+			children = (
+				7D9ECDAC1A137E9000F55EF4 /* AppDelegate.h */,
+				7D9ECDAD1A137E9000F55EF4 /* AppDelegate.m */,
+				7D9ECDAF1A137E9000F55EF4 /* ViewController.h */,
+				7D9ECDB01A137E9000F55EF4 /* ViewController.m */,
+				7D9ECDB21A137E9000F55EF4 /* Main.storyboard */,
+				7D8ED3021A16346700000C91 /* Model */,
+				7D9ECDB51A137E9000F55EF4 /* Images.xcassets */,
+				7D9ECDB71A137E9000F55EF4 /* LaunchScreen.xib */,
+				7D9ECDA81A137E9000F55EF4 /* Supporting Files */,
+			);
+			path = "Pirate Adventure";
+			sourceTree = "<group>";
+		};
+		7D9ECDA81A137E9000F55EF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D9ECDA91A137E9000F55EF4 /* Info.plist */,
+				7D9ECDAA1A137E9000F55EF4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D9ECDC11A137E9000F55EF4 /* Pirate AdventureTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D9ECDC41A137E9000F55EF4 /* Pirate_AdventureTests.m */,
+				7D9ECDC21A137E9000F55EF4 /* Supporting Files */,
+			);
+			path = "Pirate AdventureTests";
+			sourceTree = "<group>";
+		};
+		7D9ECDC21A137E9000F55EF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D9ECDC31A137E9000F55EF4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D9ECDA41A137E9000F55EF4 /* Pirate Adventure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D9ECDC81A137E9000F55EF4 /* Build configuration list for PBXNativeTarget "Pirate Adventure" */;
+			buildPhases = (
+				7D9ECDA11A137E9000F55EF4 /* Sources */,
+				7D9ECDA21A137E9000F55EF4 /* Frameworks */,
+				7D9ECDA31A137E9000F55EF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pirate Adventure";
+			productName = "Pirate Adventure";
+			productReference = 7D9ECDA51A137E9000F55EF4 /* Pirate Adventure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D9ECDBD1A137E9000F55EF4 /* Pirate AdventureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D9ECDCB1A137E9000F55EF4 /* Build configuration list for PBXNativeTarget "Pirate AdventureTests" */;
+			buildPhases = (
+				7D9ECDBA1A137E9000F55EF4 /* Sources */,
+				7D9ECDBB1A137E9000F55EF4 /* Frameworks */,
+				7D9ECDBC1A137E9000F55EF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D9ECDC01A137E9000F55EF4 /* PBXTargetDependency */,
+			);
+			name = "Pirate AdventureTests";
+			productName = "Pirate AdventureTests";
+			productReference = 7D9ECDBE1A137E9000F55EF4 /* Pirate AdventureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D9ECD9D1A137E9000F55EF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Mihail Kalichkov";
+				TargetAttributes = {
+					7D9ECDA41A137E9000F55EF4 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					7D9ECDBD1A137E9000F55EF4 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 7D9ECDA41A137E9000F55EF4;
+					};
+				};
+			};
+			buildConfigurationList = 7D9ECDA01A137E9000F55EF4 /* Build configuration list for PBXProject "Pirate Adventure" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D9ECD9C1A137E9000F55EF4;
+			productRefGroup = 7D9ECDA61A137E9000F55EF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D9ECDA41A137E9000F55EF4 /* Pirate Adventure */,
+				7D9ECDBD1A137E9000F55EF4 /* Pirate AdventureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D9ECDA31A137E9000F55EF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D9ECDB41A137E9000F55EF4 /* Main.storyboard in Resources */,
+				7D9ECDB91A137E9000F55EF4 /* LaunchScreen.xib in Resources */,
+				7D9ECDB61A137E9000F55EF4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D9ECDBC1A137E9000F55EF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D9ECDA11A137E9000F55EF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D9ECDB11A137E9000F55EF4 /* ViewController.m in Sources */,
+				7D8ED3051A1634D500000C91 /* MKTile.m in Sources */,
+				7D9ECDAE1A137E9000F55EF4 /* AppDelegate.m in Sources */,
+				7D9ECDAB1A137E9000F55EF4 /* main.m in Sources */,
+				7D8ED3081A16391D00000C91 /* MKFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D9ECDBA1A137E9000F55EF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D9ECDC51A137E9000F55EF4 /* Pirate_AdventureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D9ECDC01A137E9000F55EF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D9ECDA41A137E9000F55EF4 /* Pirate Adventure */;
+			targetProxy = 7D9ECDBF1A137E9000F55EF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D9ECDB21A137E9000F55EF4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D9ECDB31A137E9000F55EF4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D9ECDB71A137E9000F55EF4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D9ECDB81A137E9000F55EF4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D9ECDC61A137E9000F55EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7D9ECDC71A137E9000F55EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D9ECDC91A137E9000F55EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Pirate Adventure/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7D9ECDCA1A137E9000F55EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Pirate Adventure/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7D9ECDCC1A137E9000F55EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pirate AdventureTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pirate Adventure.app/Pirate Adventure";
+			};
+			name = Debug;
+		};
+		7D9ECDCD1A137E9000F55EF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pirate AdventureTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pirate Adventure.app/Pirate Adventure";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D9ECDA01A137E9000F55EF4 /* Build configuration list for PBXProject "Pirate Adventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D9ECDC61A137E9000F55EF4 /* Debug */,
+				7D9ECDC71A137E9000F55EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D9ECDC81A137E9000F55EF4 /* Build configuration list for PBXNativeTarget "Pirate Adventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D9ECDC91A137E9000F55EF4 /* Debug */,
+				7D9ECDCA1A137E9000F55EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D9ECDCB1A137E9000F55EF4 /* Build configuration list for PBXNativeTarget "Pirate AdventureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D9ECDCC1A137E9000F55EF4 /* Debug */,
+				7D9ECDCD1A137E9000F55EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D9ECD9D1A137E9000F55EF4 /* Project object */;
+}
