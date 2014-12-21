@@ -1,0 +1,20 @@
+//
+//  TaskManager-Prefix.pch
+//  MKTaskManager
+//
+//  Created by Mihail Kalichkov on 12/21/14.
+//  Copyright (c) 2014 Mihail Kalichkov. All rights reserved.
+//
+
+#ifndef MKTaskManager_TaskManager_Prefix_pch
+#define MKTaskManager_TaskManager_Prefix_pch
+
+#define TASK_TITLE @"tasktitle"
+#define TASK_DESCRIPTION @"taskdescription"
+#define TASK_DATE @"taskdate"
+#define TASK_COMPLETION @"taskcompletion"
+#define TASK_OBJECTS_KEY @"taskobjectskey"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
