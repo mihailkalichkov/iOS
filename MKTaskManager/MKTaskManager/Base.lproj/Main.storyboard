@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CZa-ED-cWq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CZa-ED-cWq">
                                 <rect key="frame" x="-1" y="1" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -46,6 +46,13 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="CZa-ED-cWq" secondAttribute="trailing" id="19p-6N-sWd"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="CZa-ED-cWq" secondAttribute="bottom" constant="-1" id="LYV-Oc-w6N"/>
+                            <constraint firstItem="CZa-ED-cWq" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="1" id="auR-P4-kfD"/>
+                            <constraint firstItem="CZa-ED-cWq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ckF-Zb-oPW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CZa-ED-cWq" secondAttribute="trailing" id="hTe-Zi-SKb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I53-e5-zdi">
                         <barButtonItem key="leftBarButtonItem" title="Reorder" id="oTg-nd-0Bk">
@@ -81,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTT-ap-oXl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTT-ap-oXl">
                                 <rect key="frame" x="32" y="28" width="64" height="30"/>
                                 <state key="normal" title="Add Task">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,14 +97,17 @@
                                     <action selector="addTaskButtonPressed:" destination="XjZ-0b-NCr" eventType="touchUpInside" id="qZh-Up-Rcc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vss-Fb-ChJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vss-Fb-ChJ">
                                 <rect key="frame" x="32" y="75" width="552" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6X-TM-4on">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6X-TM-4on">
                                 <rect key="frame" x="32" y="141" width="552" height="90"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="bob-tT-6EF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -107,7 +117,7 @@
                                     <!--2014-12-21 09:18:13 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvp-gT-fIF">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvp-gT-fIF">
                                 <rect key="frame" x="514" y="28" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,13 +131,25 @@
                         <constraints>
                             <constraint firstItem="s6X-TM-4on" firstAttribute="leading" secondItem="dvE-9p-zYs" secondAttribute="leadingMargin" constant="16" id="90p-91-Rrt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pvp-gT-fIF" secondAttribute="trailing" constant="22" id="DMm-K0-V53"/>
+                            <constraint firstItem="Pvp-gT-fIF" firstAttribute="baseline" secondItem="sTT-ap-oXl" secondAttribute="baseline" id="JLV-jN-3wE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pvp-gT-fIF" secondAttribute="trailing" id="O3c-Il-TN2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DsW-E4-Ktv" secondAttribute="trailing" constant="-16" id="QLc-8A-Jdq"/>
+                            <constraint firstItem="Vss-Fb-ChJ" firstAttribute="top" secondItem="Pvp-gT-fIF" secondAttribute="bottom" constant="17" id="Ymk-X2-A7z"/>
                             <constraint firstItem="eOr-02-riF" firstAttribute="top" secondItem="DsW-E4-Ktv" secondAttribute="bottom" constant="49" id="aGp-M0-XWF"/>
+                            <constraint firstItem="s6X-TM-4on" firstAttribute="leading" secondItem="Vss-Fb-ChJ" secondAttribute="leading" id="dR5-dR-Fff"/>
+                            <constraint firstItem="s6X-TM-4on" firstAttribute="leading" secondItem="sTT-ap-oXl" secondAttribute="leading" id="dT7-zb-BfN"/>
+                            <constraint firstItem="s6X-TM-4on" firstAttribute="top" secondItem="Vss-Fb-ChJ" secondAttribute="bottom" constant="36" id="g4v-Y1-Tg6"/>
+                            <constraint firstItem="Pvp-gT-fIF" firstAttribute="top" secondItem="sap-gE-B4O" secondAttribute="bottom" constant="8" symbolic="YES" id="gB7-Ka-Tq1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pvp-gT-fIF" secondAttribute="trailing" id="gGp-ph-6sg"/>
                             <constraint firstItem="s6X-TM-4on" firstAttribute="trailing" secondItem="dvE-9p-zYs" secondAttribute="trailingMargin" id="gvv-4k-Ru8"/>
                             <constraint firstItem="Vss-Fb-ChJ" firstAttribute="trailing" secondItem="dvE-9p-zYs" secondAttribute="trailingMargin" id="u9a-JT-7e1"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DMm-K0-V53"/>
+                                <exclude reference="O3c-Il-TN2"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
