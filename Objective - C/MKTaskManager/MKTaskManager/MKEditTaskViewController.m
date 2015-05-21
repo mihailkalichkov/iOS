@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.textField.text = self.task.title;
+    self.textView.text = self.task.detailedDescription;
+    self.datePicker.date = self.task.date;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +38,8 @@
 }
 */
 
-- (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender {
+- (IBAction)saveBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    [self performSegueWithIdentifier:@"toEditTaskViewControllerSegue" sender:nil];
 }
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MKAddTaskViewController.h"
+#import "MKDetailClassViewController.h"
 
 @interface ViewController : UIViewController <MKAddTaskViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 

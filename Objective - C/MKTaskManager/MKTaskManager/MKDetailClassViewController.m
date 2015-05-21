@@ -17,6 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.titleLabel.text = self.task.title;
+    self.detailLabel.text = self.task.detailedDescription;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *stringFromDate = [formatter stringFromDate:self.task.date];
+    
+    self.dateLabel.text = stringFromDate;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[MKDetailClassViewController class]]) {
+        MKEditTaskViewController *editClassViewController = segue.destinationViewController;
+        editClassViewController.task = self.task;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

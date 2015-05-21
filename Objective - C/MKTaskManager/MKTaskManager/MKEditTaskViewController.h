@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKTask.h"
 
 @interface MKEditTaskViewController : UIViewController
+
+@property (strong, nonatomic) MKTask *task;
+
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;

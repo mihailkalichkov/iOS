@@ -35,8 +35,6 @@
         MKTask *taskObject = [self taskObjectForDictionary:dictionary];
         [self.taskObjects addObject:taskObject];
     }
-    
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -45,6 +43,12 @@
         MKAddTaskViewController *addTaskViewController = segue.destinationViewController;
         addTaskViewController.delegate = self;
     }
+    else if ([segue.destinationViewController isKindOfClass:[MKDetailClassViewController class]]){
+        MKDetailClassViewController *detailTaskViewController = segue.destinationViewController;
+        NSIndexPath *path = sender;
+        MKTask *taskObject = self.taskObjects[path.row];
+        detailTaskViewController.task = taskObject;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +56,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)reorderBarButtonItemPressed:(UIBarButtonItem *)sender {
+- (IBAction)reorderBarButtonItemPressed:(UIBarButtonItem *)sender
+{
+    if (self.tableView.editing == YES) {
+        [self.tableView setEditing:NO animated:YES];
+    }
+    else{
+        [self.tableView setEditing:YES animated:YES];
+    }
 }
 
 - (IBAction)addTaskBarButtonItemPressed:(UIBarButtonItem *)sender
@@ -101,6 +112,56 @@
     return taskObject;
 }
 
+-(BOOL)isDateGreaterthanDate:(NSDate *)date and:(NSDate *)toDate
+{
+    NSTimeInterval dateInterval = [date timeIntervalSince1970];
+    NSTimeInterval toDateInterval = [toDate timeIntervalSince1970];
+    
+    if (dateInterval > toDateInterval) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+
+-(void)updateCompletionOfTask:(MKTask *)task forIndexPath:(NSIndexPath *)indexPath
+{
+    NSMutableArray *taskObjectsAsPropertyLists =[[[NSUserDefaults standardUserDefaults] arrayForKey:TASK_OBJECTS_KEY] mutableCopy];
+    
+    if (!taskObjectsAsPropertyLists)
+    {
+        taskObjectsAsPropertyLists = [[NSMutableArray alloc] init];
+    }
+    
+    [taskObjectsAsPropertyLists removeObjectAtIndex:indexPath.row];
+    
+    if (task.isCompleted == YES) {
+        task.isCompleted = NO;
+    }
+    else{
+        task.isCompleted = YES;
+    }
+    
+    [taskObjectsAsPropertyLists insertObject:[self taskObjectAsAPropertyList:task] atIndex:indexPath.row];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:taskObjectsAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [self.tableView reloadData];
+}
+
+-(void)saveTasks
+{
+    NSMutableArray *taskObjectsAsPropertyLists = [[NSMutableArray alloc] init];
+    for (int i = 0; i < [self.taskObjects count]; i++) {
+        [taskObjectsAsPropertyLists addObject:[self taskObjectAsAPropertyList:self.taskObjects[i]]];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:taskObjectsAsPropertyLists forKey:TASK_OBJECTS_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 #pragma mark UITableViewDataSource Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -128,8 +189,76 @@
     NSString *stringFromDate = [formatter stringFromDate:task.date];
     cell.detailTextLabel.text = stringFromDate;
     
+    BOOL isOverdue = [self isDateGreaterthanDate:[NSDate date] and:task.date];
+    
+    if (task.isCompleted == YES) {
+        cell.backgroundColor = [UIColor greenColor];
+    }
+    else if (isOverdue == YES) {
+        cell.backgroundColor = [UIColor redColor];
+    }
+    else{
+        cell.backgroundColor = [UIColor yellowColor];
+    }
+    
     return cell;
 }
+
+#pragma mark UITableViewDelegate
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MKTask *task = self.taskObjects[indexPath.row];
+    [self updateCompletionOfTask:task forIndexPath:indexPath];
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.taskObjects removeObjectAtIndex:indexPath.row];
+        
+        NSMutableArray *newTaskObjectsData = [[NSMutableArray alloc] init];
+        
+        for (MKTask *task in self.taskObjects){
+            [newTaskObjectsData addObject:[self taskObjectAsAPropertyList:task]];
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:newTaskObjectsData forKey:TASK_OBJECTS_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];        
+    }
+}
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"toDetailTaskViewControllerSeque" sender:indexPath];
+}
+
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    MKTask *taskObject = [self.taskObjects objectAtIndex:sourceIndexPath.row];
+    [self.taskObjects removeObjectAtIndex:sourceIndexPath.row];
+    [self.taskObjects insertObject:taskObject atIndex:destinationIndexPath.row];
+    [self saveTasks];
+}
+
+
+
+
+
+
+
 
 
 @end

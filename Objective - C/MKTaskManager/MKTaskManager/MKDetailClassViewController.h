@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKTask.h"
+#import "MKEditTaskViewController.h"
 
 @interface MKDetailClassViewController : UIViewController
+
+@property (strong, nonatomic) MKTask *task;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
+
 - (IBAction)editBarButtonItemPressed:(UIBarButtonItem *)sender;
 
 @end
