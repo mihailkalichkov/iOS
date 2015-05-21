@@ -14,11 +14,11 @@
 		<string>https://github.com/mihailkalichkov/iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Websites/Websites.xcodeproj</string>
+	<string>Objective - C/Websites/Websites.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5F10620F11D7AD13D56CB01E7CE37A20A7461F67</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mihailkalichkov/iOS.git</string>
