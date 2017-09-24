@@ -13,9 +13,9 @@ class SearchCriteria: NSObject {
     let year : String
     let genre : String
     
-    init(searchName : String, searchYear : String, searchGenre : String) {
-        name = searchName
-        year = searchYear
-        genre = searchGenre
+    init(name : String, year : String, genre : String) {
+        self.name = name
+        self.year = year
+        self.genre = genre
     }
 }

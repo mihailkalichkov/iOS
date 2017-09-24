@@ -33,7 +33,7 @@ class SearchViewController: GenericViewController {
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         }else{
-            let searchCriteria = SearchCriteria(searchName: titleTextField.text!, searchYear: yearTextField.text!, searchGenre: genreTextField.text!)
+            let searchCriteria = SearchCriteria(name: titleTextField.text!, year: yearTextField.text!, genre: genreTextField.text!)
             Alamofire.request(urlString, parameters: ["api_key": apiKey, "query": searchCriteria.name , "year": searchCriteria.year , "search_type": searchCriteria.genre]).responseJSON { (json) in
                 let moviesJSONObject = try? JSONSerialization.jsonObject(with: json.data!) as! [String: AnyObject]
                 let movieResults = moviesJSONObject!["results"] as! [AnyObject]
