@@ -11,13 +11,16 @@ import SwiftUI
     var name: String { get }
     var price: Double { get }
     var description: String { get }
+    var hasIncreased: Bool? { get }
 }
 
 struct SymbolDetailView<ViewModel: SymbolDetailViewModelProtocol>: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
+    
+    @State private var isFlashing: Bool = false
     
     init(viewModel: ViewModel) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
     
     var body: some View {
@@ -29,6 +32,17 @@ struct SymbolDetailView<ViewModel: SymbolDetailViewModelProtocol>: View {
             HStack {
                 Text(String(format: "%.2f", viewModel.price))
                     .font(.title)
+                    .foregroundStyle(isFlashing ? priceColor : .primary)
+                    .animation(.default, value: isFlashing)
+                
+                if let hasIncreased = viewModel.hasIncreased {
+                    Text(hasIncreased ? "↑" : "↓")
+                        .font(.subheadline)
+                        .foregroundColor(hasIncreased ? .green : .red)
+                        .animation(.default, value: isFlashing)
+                } else {
+                    Text("-").font(.subheadline).foregroundColor(.secondary)
+                }
             }
             
             Text(viewModel.description)
@@ -40,5 +54,17 @@ struct SymbolDetailView<ViewModel: SymbolDetailViewModelProtocol>: View {
         }
         .padding()
         .navigationTitle("Detail")
+        .onChange(of: viewModel.price) { _, _ in
+            guard !isFlashing else { return }
+            isFlashing = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                isFlashing = false
+            }
+        }
+    }
+    
+    var priceColor: Color {
+        guard let hasIncreased = viewModel.hasIncreased else { return .primary }
+        return hasIncreased ? .green : .red
     }
 }

@@ -12,6 +12,7 @@ final class SymbolDetailViewModel: SymbolDetailViewModelProtocol {
     
     var name: String
     @Published var price: Double
+    @Published var hasIncreased: Bool?
     var description: String
     
     private var cancellables = Set<AnyCancellable>()
@@ -19,6 +20,7 @@ final class SymbolDetailViewModel: SymbolDetailViewModelProtocol {
     init(symbol: StockSymbol, symbolsService: SymbolsService) {
         self.name = symbol.name
         _price = .init(initialValue: symbol.price)
+        _hasIncreased = .init(initialValue: nil)
         self.description = "lorem ipsum"
         
         bindSymbol(symbolsService: symbolsService)
@@ -29,6 +31,7 @@ final class SymbolDetailViewModel: SymbolDetailViewModelProtocol {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] symbol in
                 guard let self, let symbol else { return }
+                hasIncreased = symbol.hasIncreased
                 price = symbol.price
             }
             .store(in: &cancellables)
