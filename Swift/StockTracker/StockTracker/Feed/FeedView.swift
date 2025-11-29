@@ -8,8 +8,9 @@
 import SwiftUI
 
 @MainActor protocol FeedViewModelProtocol: ObservableObject {
-    var symbols: [String] { get }
+    var symbols: [StockSymbol] { get }
     var connectionStatusText: String { get }
+    var isRunning: Bool { get }
     func onAppear()
     func connectButtonTapped()
 }
@@ -42,7 +43,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     
     private var connectButton: some View {
         Button(action: viewModel.connectButtonTapped) {
-            Text("Start")
+            Text(viewModel.isRunning ? "Stop" : "Start")
                 .bold()
                 .padding(8)
                 .background(RoundedRectangle(cornerRadius: 8).stroke())
@@ -61,8 +62,11 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     }
     
     private var symbolsList : some View {
-        ForEach(viewModel.symbols, id: \.self) { symbol in
-            Text(symbol)
+        ForEach(viewModel.symbols) { symbol in
+            HStack {
+                Text(symbol.name)
+                Text("\(symbol.price)")
+            }
         }
     }
 }
