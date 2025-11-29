@@ -26,7 +26,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 8, pinnedViews: [.sectionHeaders]) {
+            LazyVStack(alignment: .leading, spacing: 0) {
                 symbolsList
                     .padding()
             }
@@ -46,6 +46,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
             Spacer()
             connectButton
         }
+        .padding(.horizontal)
     }
     
     @ViewBuilder private var connectButton: some View {
@@ -71,6 +72,8 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     @ViewBuilder private var symbolsList: some View {
         ForEach(viewModel.symbols) { symbol in
             SymbolRow(symbol: symbol)
+                .transition(.slide)
         }
+        .animation(.easeInOut(duration: 0.3), value: viewModel.symbols)
     }
 }

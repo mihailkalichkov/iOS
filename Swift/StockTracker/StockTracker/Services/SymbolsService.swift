@@ -109,7 +109,7 @@ final class SymbolsService: ObservableObject {
         var item = symbols[idx]
         item.previousPrice = item.price
         item.price = price
-        if let previousPrice = item.previousPrice {
+        if let previousPrice = item.previousPrice, price != previousPrice {
             item.hasIncreased = price > previousPrice
         } else {
             item.hasIncreased = nil
