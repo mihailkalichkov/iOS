@@ -11,6 +11,8 @@ import SwiftUI
     var symbols: [StockSymbol] { get }
     var connectionStatusText: String { get }
     var isRunning: Bool { get }
+    var connectionState: FeedConnectionState { get }
+    var connectButtonText: String { get }
     func onAppear()
     func connectButtonTapped()
 }
@@ -43,7 +45,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     
     private var connectButton: some View {
         Button(action: viewModel.connectButtonTapped) {
-            Text(viewModel.isRunning ? "Stop" : "Start")
+            Text(viewModel.connectButtonText)
                 .bold()
                 .padding(8)
                 .background(RoundedRectangle(cornerRadius: 8).stroke())
@@ -54,7 +56,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
         HStack(spacing: 8) {
             Circle()
                 .frame(width: 12, height: 12)
-                .foregroundColor(.green)
+                .foregroundColor(viewModel.connectionState == .connected ? .green : .red)
             Text(viewModel.connectionStatusText)
                 .font(.subheadline)
                 .foregroundColor(.secondary)

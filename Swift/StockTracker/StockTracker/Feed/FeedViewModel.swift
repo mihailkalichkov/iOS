@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 
+enum FeedConnectionState {
+    case connected
+    case disconnected
+}
+
 final class FeedViewModel: FeedViewModelProtocol {
     private var cancellables = Set<AnyCancellable>()
     private var symbolsService = SymbolsService()
@@ -15,6 +20,8 @@ final class FeedViewModel: FeedViewModelProtocol {
     @Published var symbols = [StockSymbol]()
     @Published var connectionStatusText: String = "Disconnected"
     @Published var isRunning: Bool = false
+    @Published var connectionState: FeedConnectionState = .disconnected
+    @Published var connectButtonText: String = "Start"
     
     func onAppear() {
         bindSymbols()
@@ -25,9 +32,11 @@ final class FeedViewModel: FeedViewModelProtocol {
         if symbolsService.isRunning {
             symbolsService.stop()
             isRunning = false
+            connectButtonText = "Start"
         } else {
             symbolsService.start()
             isRunning = true
+            connectButtonText = "Stop"
         }
     }
     
@@ -44,6 +53,7 @@ final class FeedViewModel: FeedViewModelProtocol {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] status in
                 guard let self else { return }
+                connectionState = status == .connected ? .connected : .disconnected
                 
                 connectionStatusText = switch status {
                 case .connected: "Connected"

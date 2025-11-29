@@ -77,9 +77,7 @@ final class SymbolsService: ObservableObject {
     private func bindConnectionState() {
         websocketManager.$state
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] state in
-                self?.connectionStatus = state
-            }
+            .assign(to: \.connectionStatus, on: self)
             .store(in: &cancellables)
     }
     
