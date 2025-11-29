@@ -107,7 +107,14 @@ final class SymbolsService: ObservableObject {
     private func update(symbol: String, price: Double) {
         guard let idx = symbols.firstIndex(where: { $0.name == symbol }) else { return }
         var item = symbols[idx]
+        item.previousPrice = item.price
         item.price = price
+        if let previousPrice = item.previousPrice {
+            item.hasIncreased = price > previousPrice
+        } else {
+            item.hasIncreased = nil
+        }
+        
         symbols[idx] = item
 
         sortSymbols()

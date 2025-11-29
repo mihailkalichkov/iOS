@@ -25,17 +25,22 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     }
     
     var body: some View {
-        LazyVStack {
-            topBar
-            symbolsList
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 8, pinnedViews: [.sectionHeaders]) {
+                symbolsList
+                    .padding()
+            }
         }
-        .padding()
         .onAppear {
             viewModel.onAppear()
         }
+        .toolbar {
+            topBar
+        }
+        .navigationTitle("Prices")
     }
     
-    private var topBar: some View {
+    @ViewBuilder private var topBar: some View {
         HStack {
             connectionIndicator
             Spacer()
@@ -43,7 +48,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
         }
     }
     
-    private var connectButton: some View {
+    @ViewBuilder private var connectButton: some View {
         Button(action: viewModel.connectButtonTapped) {
             Text(viewModel.connectButtonText)
                 .bold()
@@ -52,7 +57,7 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
         }
     }
     
-    private var connectionIndicator: some View {
+    @ViewBuilder private var connectionIndicator: some View {
         HStack(spacing: 8) {
             Circle()
                 .frame(width: 12, height: 12)
@@ -63,12 +68,9 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
         }
     }
     
-    private var symbolsList : some View {
+    @ViewBuilder private var symbolsList: some View {
         ForEach(viewModel.symbols) { symbol in
-            HStack {
-                Text(symbol.name)
-                Text("\(symbol.price)")
-            }
+            SymbolRow(symbol: symbol)
         }
     }
 }
