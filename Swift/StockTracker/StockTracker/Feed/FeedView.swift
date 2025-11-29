@@ -13,6 +13,7 @@ import SwiftUI
     var isRunning: Bool { get }
     var connectionState: FeedConnectionState { get }
     var connectButtonText: String { get }
+    var symbolsService: SymbolsService { get }
     func onAppear()
     func connectButtonTapped()
 }
@@ -38,6 +39,9 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
             topBar
         }
         .navigationTitle("Prices")
+        .navigationDestination(for: StockSymbol.self) { symbol in
+            SymbolDetailView(viewModel: SymbolDetailViewModel(symbol: symbol, symbolsService: viewModel.symbolsService))
+        }
     }
     
     @ViewBuilder private var topBar: some View {
@@ -71,8 +75,10 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
     
     @ViewBuilder private var symbolsList: some View {
         ForEach(viewModel.symbols) { symbol in
-            SymbolRow(symbol: symbol)
-                .transition(.slide)
+            NavigationLink(value: symbol) {
+                SymbolRow(symbol: symbol)
+                    .transition(.slide)
+            }
         }
         .animation(.easeInOut(duration: 0.3), value: viewModel.symbols)
     }

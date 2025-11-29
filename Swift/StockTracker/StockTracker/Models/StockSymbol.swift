@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StockSymbol: Identifiable, Equatable {
+struct StockSymbol: Identifiable, Equatable, Hashable {
     let id: String
     let name: String
     var price: Double

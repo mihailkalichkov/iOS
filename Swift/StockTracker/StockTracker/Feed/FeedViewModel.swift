@@ -14,14 +14,19 @@ enum FeedConnectionState {
 }
 
 final class FeedViewModel: FeedViewModelProtocol {
-    private var cancellables = Set<AnyCancellable>()
-    private var symbolsService = SymbolsService()
+    let symbolsService: SymbolsService
     
     @Published var symbols = [StockSymbol]()
     @Published var connectionStatusText: String = "Disconnected"
     @Published var isRunning: Bool = false
     @Published var connectionState: FeedConnectionState = .disconnected
     @Published var connectButtonText: String = "Start"
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    init(symbolsService: SymbolsService) {
+        self.symbolsService = symbolsService
+    }
     
     func onAppear() {
         bindSymbols()

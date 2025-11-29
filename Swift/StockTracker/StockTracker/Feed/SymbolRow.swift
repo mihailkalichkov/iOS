@@ -13,14 +13,14 @@ struct SymbolRow: View {
     @State private var isFlashing: Bool = false
     
     var body: some View {
-        HStack {
+        HStack(spacing: 8) {
             VStack(alignment: .leading) {
                 Text(symbol.name)
                     .font(.headline)
             }
             
             Spacer()
-            VStack(alignment: .trailing) {
+            HStack() {
                 Text(String(format: "%.2f", symbol.price))
                     .font(.headline)
                     .foregroundStyle(isFlashing ? priceColor : .primary)
@@ -35,6 +35,11 @@ struct SymbolRow: View {
                     Text("-").font(.subheadline).foregroundColor(.secondary)
                 }
             }
+            
+            Image(systemName: "chevron.right")
+                .foregroundStyle(.primary)
+                .opacity(isFlashing ? 1 : 0.6)
+                .animation(.easeInOut(duration: 0.2), value: isFlashing)
         }
         .onChange(of: symbol.price) { _, _ in
             isFlashing = true

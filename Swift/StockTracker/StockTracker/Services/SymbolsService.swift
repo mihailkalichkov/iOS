@@ -46,6 +46,25 @@ final class SymbolsService: ObservableObject {
         websocketManager.disconnect()
     }
     
+    func publisher(for name: String) -> AnyPublisher<StockSymbol?, Never> {
+        $symbols
+            .map { symbols in
+                let symbol = symbols.first(where: { $0.name == name })
+                return symbol
+            }
+            .removeDuplicates { lhs, rhs in
+                switch (lhs, rhs) {
+                case (nil, nil):
+                    return true
+                case let (l?, r?):
+                    return l.price == r.price
+                default:
+                    return false
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+    
     private func updatePrices() {
         timerCancellable = Timer.publish(every: updateInterval, on: .main, in: .common)
             .autoconnect()

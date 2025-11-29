@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct StockTrackerApp: App {
+    private var symbolsService = SymbolsService()
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                FeedView(viewModel: FeedViewModel())
+                FeedView(viewModel: FeedViewModel(symbolsService: symbolsService))
             }
         }
     }
