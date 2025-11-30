@@ -21,6 +21,7 @@ final class FeedViewModel: FeedViewModelProtocol {
     @Published var isRunning: Bool = false
     @Published var connectionState: FeedConnectionState = .disconnected
     @Published var connectButtonText: String = "Start"
+    var selectedSymbol: StockSymbol? = nil
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -43,6 +44,15 @@ final class FeedViewModel: FeedViewModelProtocol {
             isRunning = true
             connectButtonText = "Stop"
         }
+    }
+    
+    func willNavigateToSymbol(named: String) {
+        guard let symbol = symbols.first(where: { $0.name == named }) else { return }
+        if !isRunning {
+            connectButtonTapped()
+        }
+        
+        selectedSymbol = symbol
     }
     
     private func bindSymbols() {

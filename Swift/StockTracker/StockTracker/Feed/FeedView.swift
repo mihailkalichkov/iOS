@@ -14,15 +14,20 @@ import SwiftUI
     var connectionState: FeedConnectionState { get }
     var connectButtonText: String { get }
     var symbolsService: SymbolsService { get }
+    var selectedSymbol: StockSymbol? { get }
     func onAppear()
     func connectButtonTapped()
+    func willNavigateToSymbol(named: String)
 }
 
 struct FeedView<ViewModel: FeedViewModelProtocol>: View {
+    @EnvironmentObject var router: AppRouter
     @StateObject var viewModel: ViewModel
+    @Binding var path: NavigationPath
     
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, path: Binding<NavigationPath>) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        _path = path
     }
     
     var body: some View {
@@ -41,6 +46,14 @@ struct FeedView<ViewModel: FeedViewModelProtocol>: View {
         .navigationTitle("Prices")
         .navigationDestination(for: StockSymbol.self) { symbol in
             SymbolDetailView(viewModel: SymbolDetailViewModel(symbol: symbol, symbolsService: viewModel.symbolsService))
+        }
+        .onReceive(router.$deepLinkedSymbol) { symbolName in
+            guard let symbolName else { return }
+            
+            viewModel.willNavigateToSymbol(named: symbolName)
+            if let symbol = viewModel.selectedSymbol {
+                path.append(symbol)
+            }
         }
     }
     

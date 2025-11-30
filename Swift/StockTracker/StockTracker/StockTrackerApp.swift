@@ -9,12 +9,19 @@ import SwiftUI
 
 @main
 struct StockTrackerApp: App {
+    @StateObject var router = AppRouter()
+    @State private var path = NavigationPath()
     private var symbolsService = SymbolsService()
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                FeedView(viewModel: FeedViewModel(symbolsService: symbolsService))
+            NavigationStack(path: $path,
+                            root: {
+                FeedView(viewModel: FeedViewModel(symbolsService: symbolsService), path: $path)
+                    .environmentObject(router)
+            })
+            .onOpenURL { url in
+                router.handle(url: url)
             }
         }
     }
