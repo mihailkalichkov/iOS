@@ -13,7 +13,7 @@ import SwiftUI
     var isRunning: Bool { get }
     var connectionState: FeedConnectionState { get }
     var connectButtonText: String { get }
-    var symbolsService: SymbolsService { get }
+    var symbolsService: any SymbolsServiceProtocol { get }
     var selectedSymbol: StockSymbol? { get }
     func onAppear()
     func connectButtonTapped()

@@ -8,10 +8,25 @@
 import Foundation
 import Combine
 
-final class SymbolsService: ObservableObject {
+protocol SymbolsServiceProtocol: ObservableObject {
+    var symbols: [StockSymbol] { get }
+    var symbolsPublisher: Published<[StockSymbol]>.Publisher { get }
+    var isRunning: Bool { get }
+    var connectionStatus: WebSocketService.ConnectionState { get }
+    var connectionStatusPublisher: Published<WebSocketService.ConnectionState>.Publisher { get }
+    
+    func start()
+    func stop()
+    func publisher(for name: String) -> AnyPublisher<StockSymbol?, Never>
+}
+
+final class SymbolsService: SymbolsServiceProtocol {
     @Published private(set) var symbols = [StockSymbol]()
     @Published var isRunning = false
     @Published var connectionStatus = WebSocketService.ConnectionState.disconnected
+    
+    var symbolsPublisher: Published<[StockSymbol]>.Publisher { $symbols }
+    var connectionStatusPublisher: Published<WebSocketService.ConnectionState>.Publisher { $connectionStatus }
     
     private var cancellables = Set<AnyCancellable>()
     private let websocketManager = WebSocketService.shared

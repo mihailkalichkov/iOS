@@ -14,7 +14,7 @@ enum FeedConnectionState {
 }
 
 final class FeedViewModel: FeedViewModelProtocol {
-    let symbolsService: SymbolsService
+    let symbolsService: any SymbolsServiceProtocol
     
     @Published var symbols = [StockSymbol]()
     @Published var connectionStatusText: String = "Disconnected"
@@ -25,7 +25,7 @@ final class FeedViewModel: FeedViewModelProtocol {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(symbolsService: SymbolsService) {
+    init(symbolsService: any SymbolsServiceProtocol) {
         self.symbolsService = symbolsService
     }
     
@@ -56,19 +56,19 @@ final class FeedViewModel: FeedViewModelProtocol {
     }
     
     private func bindSymbols() {
-        symbolsService
-            .$symbols
+        symbolsService.symbolsPublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.symbols, on: self)
             .store(in: &cancellables)
     }
     
     private func bindConnectionStatus() {
-        symbolsService.$connectionStatus
+        symbolsService.connectionStatusPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] status in
                 guard let self else { return }
                 connectionState = status == .connected ? .connected : .disconnected
+                isRunning = status == .connected
                 
                 connectionStatusText = switch status {
                 case .connected: "Connected"

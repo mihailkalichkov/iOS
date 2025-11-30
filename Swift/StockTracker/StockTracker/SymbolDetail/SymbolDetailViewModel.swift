@@ -17,7 +17,7 @@ final class SymbolDetailViewModel: SymbolDetailViewModelProtocol {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(symbol: StockSymbol, symbolsService: SymbolsService) {
+    init(symbol: StockSymbol, symbolsService: any SymbolsServiceProtocol) {
         self.name = symbol.name
         _price = .init(initialValue: symbol.price)
         _hasIncreased = .init(initialValue: nil)
@@ -26,7 +26,7 @@ final class SymbolDetailViewModel: SymbolDetailViewModelProtocol {
         bindSymbol(symbolsService: symbolsService)
     }
     
-    private func bindSymbol(symbolsService: SymbolsService) {
+    private func bindSymbol(symbolsService: any SymbolsServiceProtocol) {
         symbolsService.publisher(for: name)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] symbol in
